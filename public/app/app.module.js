@@ -1,1 +1,1 @@
-var $app = angular.module('Notes', [ 'ngResource','ngRoute' ]);
+var $app = angular.module('Notes', [ 'ngRoute' ]);
