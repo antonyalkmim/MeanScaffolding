@@ -1,0 +1,15 @@
+{
+  "name": "Notes",
+  "version": "1.0.0",
+  "authors": [
+    "antonyalkmim"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
