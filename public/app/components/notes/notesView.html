@@ -1,14 +1,28 @@
 <div ng-controller="NotesController">
 
 
-  <h1>{{teste}}</h1>
+  <h1>Notes ({{notes.length}})</h1>
 
-  <input type="text" ng-model="teste" />
+  <form class="form-inline">
+      <div class="form-group">
+          <input type="text" class="form-control" id="searchInput" placeholder="Search" ng-model="search">
+      </div>
+  </form>
+
+  <table class="table table-bordered table-hover">
+      <thead>
+          <tr>
+              <th>Text</th>
+              <th width="20%">Date</th>
+          </tr>
+      </thead>
+
+      <tr ng-repeat="note in notes | filter:search">
+          <td>{{note.text}}</td>
+          <td>{{note.date}}</td>
+      </tr>
 
 
-  <hr/>
-
-  <a href="#" ng-click="listar()">Listar</a>
-
+  </table>
 
 </div>

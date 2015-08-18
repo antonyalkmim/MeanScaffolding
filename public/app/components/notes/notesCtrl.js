@@ -1,12 +1,12 @@
 $app.controller('NotesController', ['$scope', '$http', function ($scope, $http) {
 
-    $scope.teste = "Notes";
-    $scope.listar = listarNotes;
+    $scope.notes = getNotes();
 
 
-    function listarNotes(){
+
+    function getNotes(){
         $http.get('notes/list').success(function(data){
-            console.log(data);
+            $scope.notes = data.notes;
         });
     }
 }])

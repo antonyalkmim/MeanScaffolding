@@ -10,12 +10,20 @@ function indexAction(req, res, next){
 }
 
 function listAction(req,res, next){
-  //res.send("notes/testeAction");
 
-  var json = "{success:true}";
+  var notes = [
+      {text:'Jao', date: '21-21-2121'},
+      {text:'Julesca', date: '21-21-2121'},
+      {text:'Tio', date: '21-21-2121'},
+      {text:'Toin', date: '21-21-2121'},
+      {text:'Jacu', date: '21-21-2121'},
+      {text:'Aderbaldo', date: '21-21-2121'}
+  ];
 
-  res.json({success:true, message:"Deu certo!"});
+
+  res.json({success:true, notes:notes});
 }
+
 
 /* Routes */
 router.get('/', indexAction);
