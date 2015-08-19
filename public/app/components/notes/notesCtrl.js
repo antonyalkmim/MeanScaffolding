@@ -9,4 +9,5 @@ $app.controller('NotesController', ['$scope', '$http', function ($scope, $http) 
             $scope.notes = data.notes;
         });
     }
+
 }])

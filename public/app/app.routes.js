@@ -9,6 +9,10 @@ $app.config(function($routeProvider, $httpProvider) {
 				templateUrl : "./app/components/notes/notesView.html",
 				controller : "NotesController"
 			})
+			.when("/notes/add",{
+				templateUrl : "./app/components/notes/notesAddView.html",
+				controller : "NotesAddController"
+			})
       .otherwise({
         redirectTo: '/'
       });

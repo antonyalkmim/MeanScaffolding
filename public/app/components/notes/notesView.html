@@ -9,17 +9,22 @@
       </div>
   </form>
 
+
+  <a ng-href="#/notes/add">Add</a>
+
   <table class="table table-bordered table-hover">
       <thead>
           <tr>
+              <th width="20%">ID</th>
               <th>Text</th>
               <th width="20%">Date</th>
           </tr>
       </thead>
 
       <tr ng-repeat="note in notes | filter:search">
+          <td>{{note._id}}</td>
           <td>{{note.text}}</td>
-          <td>{{note.date}}</td>
+          <td>{{note.reminderDate}}</td>
       </tr>
 
 
