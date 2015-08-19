@@ -2,11 +2,11 @@
 
 module.exports = function(app) {
 
-  /* Home */
-  app.use('/', require('./controllers/indexController'));
-
-  /* Notes */
-  app.use('/notes', require('./controllers/notesController'));
+  /* Default */
+  app.use('/', require('./routes/default'));
+  
+  /* Admin */
+  app.use('/admin', require('./routes/admin'));
 
 
 

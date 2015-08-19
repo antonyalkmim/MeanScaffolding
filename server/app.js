@@ -1,3 +1,5 @@
+/// <reference path="../typings/tsd.d.ts" />
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -7,6 +9,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -23,7 +26,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 mongoose.connect('mongodb://localhost/notes');
 
-require('./routes')(app);
+require('./modules')(app);
 
 
 module.exports = app;

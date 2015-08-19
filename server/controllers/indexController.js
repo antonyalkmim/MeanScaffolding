@@ -1,17 +1,12 @@
-var express = require('express');
-var router = express.Router();
+/**
+ * IndexController
+ */
 
 
-function indexAction(req, res, next){
-  res.send('indexAction');
+module.exports.index = function(req,res,next){
+  res.send("something");
 }
 
-function testeAction(req,res, next){
-  res.send("testeAction");
+module.exports.listar = function(req,res,next){
+  res.send("listar");
 }
-
-/* Routes */
-router.get('/', indexAction);
-router.get('/teste', testeAction);
-
-module.exports = router;
