@@ -12,7 +12,9 @@ router.get('/listar', indexController.listar);
 // ===================
 var notesController = require('../controllers/notesController');
 router.get('/notes', notesController.index);
-router.get('/notes/listar', notesController.listar);
+router.get('/notes/list', notesController.list);
+router.post('/notes/add', notesController.add);
+router.delete('/notes/delete/:id', notesController.delete);
 
 
 module.exports = router;

@@ -17,7 +17,7 @@ router.get('/listar', indexController.listar);
 // ===================
 var notesController = require('../controllers/notesController');
 router.get('/notes', notesController.index);
-router.get('/notes/listar', notesController.listar);
+router.get('/notes/listar', notesController.list);
 
 
 module.exports = router;

@@ -10,7 +10,12 @@
   </form>
 
 
-  <a ng-href="#/notes/add">Add</a>
+  <div class="btn-group" role="group" aria-label="...">
+    <a ng-href="#/notes/add" class="btn btn-success">Add</a>
+    <a href="#" ng-click="removeAll()" class="btn btn-danger">Clear</a>
+  </div>
+  
+  <hr/>
 
   <table class="table table-bordered table-hover">
       <thead>

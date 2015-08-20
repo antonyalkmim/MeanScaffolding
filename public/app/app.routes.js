@@ -1,10 +1,10 @@
 $app.config(function($routeProvider, $httpProvider) {
 
-		$routeProvider.
-			when("/",{
-				templateUrl : "./app/components/home/homeView.html",
-				controller : "HomeController"
-			})
+		$routeProvider
+			// .when("/",{
+			// 	templateUrl : "./app/components/home/homeView.html",
+			// 	controller : "HomeController"
+			// })
 			.when("/notes",{
 				templateUrl : "./app/components/notes/notesView.html",
 				controller : "NotesController"
@@ -14,7 +14,7 @@ $app.config(function($routeProvider, $httpProvider) {
 				controller : "NotesAddController"
 			})
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/notes'
       });
 
 	//$httpProvider.responseInterceptors.push(interceptor);

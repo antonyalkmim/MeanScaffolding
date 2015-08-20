@@ -1,12 +1,23 @@
 /**
  * IndexController
  */
+var IndexController = {};
 
 
-module.exports.index = function(req,res,next){
-  res.send("something");
-}
+//ACTIONS
+//==================================================
+IndexController.index = function(req,res,next){
+  res.send("Index");  
+};
 
-module.exports.listar = function(req,res,next){
-  res.send("listar");
-}
+IndexController.listar = function(req,res,next){
+  res.send(rewrite());
+};
+
+
+//PRIVATE METHODS
+//==================================================
+///
+
+
+module.exports = IndexController;
