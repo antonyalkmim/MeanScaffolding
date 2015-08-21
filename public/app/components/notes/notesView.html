@@ -12,7 +12,7 @@
 
   <div class="btn-group" role="group" aria-label="...">
     <a ng-href="#/notes/add" class="btn btn-success">Add</a>
-    <a href="#" ng-click="removeAll()" class="btn btn-danger">Clear</a>
+    <a href="#" ng-click="clearNotes()" class="btn btn-danger">Clear</a>
   </div>
   
   <hr/>
@@ -23,6 +23,7 @@
               <th width="20%">ID</th>
               <th>Text</th>
               <th width="20%">Date</th>
+              <th width="20%">Actions</th>
           </tr>
       </thead>
 
@@ -30,6 +31,12 @@
           <td>{{note._id}}</td>
           <td>{{note.text}}</td>
           <td>{{note.reminderDate}}</td>
+          <td>
+            <div class="btn-group" role="group">
+              <a href="#/notes/edit/{{note._id}}" class="btn btn-warning glyphicon glyphicon-pencil"></a>
+              <a href="#" ng-click="deleteNote(note)" class="btn btn-danger glyphicon glyphicon-remove"></a>
+            </div>
+        </td>
       </tr>
 
 

@@ -13,6 +13,10 @@ $app.config(function($routeProvider, $httpProvider) {
 				templateUrl : "./app/components/notes/notesAddView.html",
 				controller : "NotesAddController"
 			})
+			.when("/notes/edit/:id",{
+				templateUrl : "./app/components/notes/notesAddView.html",
+				controller : "NotesAddController"
+			})
       .otherwise({
         redirectTo: '/notes'
       });

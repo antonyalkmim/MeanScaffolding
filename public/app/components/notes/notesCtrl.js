@@ -1,25 +1,26 @@
-$app.controller('NotesController', ['$scope', '$http', '$location', function ($scope, $http, $location) {
+$app.controller('NotesController', ['$scope', '$http', '$location', 'NoteService', function ($scope, $http, $location, NoteService) {
 
-    $scope.notes = getNotes();
-    $scope.removeAll = removeAll;
+    $scope.notes = NoteService.notes;
+    $scope.clearNotes = clear;
     $scope.deleteNote = deleteNote;
-
-    function getNotes(){
-        $http.get('notes/list').success(function(data){
-            $scope.notes = data.notes;
+    $scope.clear = NoteService.clear
+    $scope.edit = editNote;
+    
+    
+    function clear(){
+        NoteService.clear(function(){
+           $location.path("/notes"); 
         });
     }
     
-    
-    function removeAll(){
-        deleteNote(0); //delete All
+    function deleteNote(note){
+        NoteService.remove(note, function(){
+           $location.path("/notes"); 
+        });
     }
     
-    function deleteNote(id){
-        $http.delete('notes/delete/' + id)
-            .success(function(data){
-                $location.path('/notes');
-            });
+    function editNote(note){
+        $location.path("/edit/" + note._id);
     }
-
+    
 }])
