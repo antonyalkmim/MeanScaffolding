@@ -2,23 +2,28 @@
 
 module.exports = function(app) {
 
-  /* Default */
+  //Default
+  //==========================================
   app.use('/', require('./routes/default'));
   
-  /* Admin */
+  //Admin
+  //==========================================
   app.use('/admin', require('./routes/admin'));
 
 
 
 
-  // catch 404 and forward to error handler
+  // Catch 404 and forward to error handler
+  //==========================================
   app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
   });
 
-  // error handlers
+  
+  // Error handlers
+  //==========================================
 
   // development error handler
   // will print stacktrace

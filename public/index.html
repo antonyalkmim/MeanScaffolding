@@ -1,15 +1,16 @@
-<html ng-app="Notes">
+<html ng-app="App">
 <head>
 
   <link rel="stylesheet" type="text/style" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/style" href="assets/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
 
-
-  <link rel="stylesheet" type="text/style" href="assets/css/main.css">
+  <!-- BUILD/CSS -->
+  <link rel="stylesheet" type="text/style" href="assets/build/css/all.min.css">
+  
 </head>
 <body>
 
-  <h1># NotesWeb</h1>
+  <h1># Users</h1>
   <div ng-view></div>
 
 </body>
@@ -21,15 +22,19 @@
 <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
 <script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
+<!--Js-->
+<script src="assets/build/js/all.min.js"></script>
+
+
+
 <script src="app/app.module.js"></script>
 <script src="app/app.routes.js"></script>
 
-<!-- controllers -->
-<script src="app/components/notes/notesService.js"></script>
+<!-- services -->
+<script src="app/components/users/usersService.js"></script>
 
 <!-- controllers -->
 <script src="app/components/home/homeCtrl.js"></script>
-<script src="app/components/notes/notesCtrl.js"></script>
-<script src="app/components/notes/notesAddCtrl.js"></script>
+<script src="app/components/users/usersCtrl.js"></script>
 
 </html>

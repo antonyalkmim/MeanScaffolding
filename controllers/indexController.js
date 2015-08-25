@@ -4,20 +4,10 @@
 var IndexController = {};
 
 
-//ACTIONS
-//==================================================
-IndexController.index = function(req,res,next){
-  res.send("Index");  
-};
-
-IndexController.listar = function(req,res,next){
-  res.send("Something");
+IndexController.index = function(req,res){
+	res.send("My Index");	
 };
 
 
-//PRIVATE METHODS
-//==================================================
-///
 
-
-module.exports = IndexController;
+module.exports = IndexController; 

@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-mongoose.connect('mongodb://localhost/notes');
+mongoose.connect('mongodb://localhost/appBDName');
 
 require('./modules')(app);
 

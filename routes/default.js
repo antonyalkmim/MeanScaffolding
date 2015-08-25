@@ -6,15 +6,15 @@ var router = express.Router();
 // ===================
 var indexController = require('../controllers/indexController');
 router.get('/', indexController.index);
-router.get('/listar', indexController.listar);
 
-//NOTES
+// USERS     
 // ===================
-var notesController = require('../controllers/notesController');
-router.get('/notes', notesController.index);
-router.get('/notes/list', notesController.list);
-router.post('/notes/add', notesController.add);
-router.delete('/notes/delete/:id', notesController.delete);
+var userController = require('../controllers/userController');
+router.get('/users', userController.index);
+router.get('/users/list', userController.list);
+router.post('/users/add', userController.add);
+router.post('/users/edit', userController.edit);
+router.delete('/users/delete/:id', userController.delete);
 
 
 module.exports = router;

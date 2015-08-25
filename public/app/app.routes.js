@@ -5,21 +5,13 @@ $app.config(function($routeProvider, $httpProvider) {
 			// 	templateUrl : "./app/components/home/homeView.html",
 			// 	controller : "HomeController"
 			// })
-			.when("/notes",{
-				templateUrl : "./app/components/notes/notesView.html",
-				controller : "NotesController"
+			.when("/users",{
+				templateUrl : "./app/components/users/usersView.html",
+				controller : "UsersController"
 			})
-			.when("/notes/add",{
-				templateUrl : "./app/components/notes/notesAddView.html",
-				controller : "NotesAddController"
-			})
-			.when("/notes/edit/:id",{
-				templateUrl : "./app/components/notes/notesAddView.html",
-				controller : "NotesAddController"
-			})
-      .otherwise({
-        redirectTo: '/notes'
-      });
+			.otherwise({
+				redirectTo: '/users'
+			});
 
 	//$httpProvider.responseInterceptors.push(interceptor);
 });

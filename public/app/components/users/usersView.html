@@ -1,0 +1,55 @@
+<div ng-controller="UsersController">
+
+
+  <h1>Users ({{users.length}})</h1>
+
+  
+
+   <!------------ form add user ------------>
+  <form ng-submit="newUser._id ? updateUser(newUser) : addUser(newUser)">
+      <div class="form-group">
+          <label for="inputUsername">Username</label>
+          <input type="text" class="form-control" id="inputUsername" placeholder="Username" ng-model="newUser.username" required="required" style="width:200px">
+      </div>
+      <div class="form-group">
+          <label for="inputPassword">Password</label>
+          <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="newUser.password" required="required" style="width:200px">
+      </div>
+
+      <button type="submit" class="btn btn-default">Save</button>
+  </form>
+  <hr/>
+  
+  <!------------ users list ------------>
+  <form class="form-inline">
+      <div class="form-group">
+          <input type="text" class="form-control" id="searchInput" placeholder="Search" ng-model="search">
+      </div>
+  </form>
+  <div class="btn-group" role="group" aria-label="...">
+    <a href="#" ng-click="clearUsers()" class="btn btn-danger">Clear</a>
+  </div>
+  <table class="table table-bordered table-hover">
+      <thead>
+          <tr>
+              <th width="20%">ID</th>
+              <th>Username</th>
+              <th width="20%">Password</th>
+              <th width="20%">Actions</th>
+          </tr>
+      </thead>
+
+      <tr ng-repeat="user in users | filter:search">
+          <td>{{user._id}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.password}}</td>
+          <td>
+            <div class="btn-group" role="group">
+              <a ng-click="editUser(user)" class="btn btn-warning glyphicon glyphicon-pencil"></a>
+              <a ng-click="deleteUser(user)" class="btn btn-danger glyphicon glyphicon-remove"></a>
+            </div>
+        </td>
+      </tr>
+  </table>
+
+</div>
